@@ -32,7 +32,7 @@ public class UserMapper {
         return User.builder()
                 .firstName(userRequest.getFirstName())
                 .lastName(userRequest.getLastName())
-                .username(userRequest.getFirstName() + "." + userRequest.getLastName())
+                .username(userRequest.getFirstName().toLowerCase() + "." + userRequest.getLastName().toLowerCase())
                 .email(userRequest.getEmail())
                 .userModel(UserModel.USER)
                 .createdOn(OffsetDateTime.now())
