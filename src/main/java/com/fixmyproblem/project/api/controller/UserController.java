@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.fixmyproblem.project.api.controller.BasePaths.*;
+import static com.fixmyproblem.project.api.BasePaths.*;
 
 @RestController
 @RequestMapping(BASE_PATH + USER_BASE_PATH)

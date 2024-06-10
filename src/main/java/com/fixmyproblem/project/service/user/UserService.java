@@ -30,17 +30,7 @@ public class UserService {
         User user = userMapper.mapToUser(userRequest);
         User persisted = userRepository.save(user);
 
-        try {
-            emailService.sendSimpleMessage(
-                    userRequest.getEmail(),
-                    "Welcome to FixMyProblem",
-                    "Hello " + userRequest.getFirstName() + ", welcome to FixMyProblem!"
-            );
-        } catch (Exception e) {
-            // Log the exception
-            e.printStackTrace();
-            // Optionally, handle the exception (e.g., retry, alert admin, etc.)
-        }
+        sendWelcomeEmail(persisted);
 
         return userMapper.mapToUserResponse(persisted);
     }
@@ -49,7 +39,8 @@ public class UserService {
 
         String subject = "Welcome to Fix My Problem!";
         String text = "Dear " + persisted.getFirstName() + ",\n\nThank you for your registration!\nYou are now part of Fix My Problem." +
-                "\n\nBest Regards,\nFixMyProblem Team";
+                "\nYour username is: " + persisted.getUsername()  + "\n\nBest Regards,\nFixMyProblem Team";
+
         emailService.sendSimpleMessage(persisted.getEmail(), subject, text);
     }
 

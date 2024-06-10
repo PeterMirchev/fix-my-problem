@@ -2,7 +2,7 @@ package com.fixmyproblem.project.service.user;
 
 import com.fixmyproblem.project.api.dto.UserRequest;
 import com.fixmyproblem.project.api.dto.UserResponse;
-import com.fixmyproblem.project.model.UserModel;
+import com.fixmyproblem.project.model.Role;
 import com.fixmyproblem.project.model.user.User;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,7 @@ public class UserMapper {
                 .lastName(user.getLastName())
                 .username(user.getUsername())
                 .email(user.getEmail())
-                .userModel(user.getUserModel())
+                .role(user.getRole())
                 .tickets(user.getTickets())
                 .createdOn(user.getCreatedOn())
                 .updatedOn(user.getUpdatedOn())
@@ -34,7 +34,7 @@ public class UserMapper {
                 .lastName(userRequest.getLastName())
                 .username(userRequest.getFirstName().toLowerCase() + "." + userRequest.getLastName().toLowerCase())
                 .email(userRequest.getEmail())
-                .userModel(UserModel.USER)
+                .role(Role.USER)
                 .createdOn(OffsetDateTime.now())
                 .updatedOn(OffsetDateTime.now())
                 .isActive(true)

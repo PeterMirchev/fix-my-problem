@@ -1,6 +1,6 @@
 package com.fixmyproblem.project.model;
 
-public enum UserModel {
+public enum Role {
 
     ADMINISTRATOR,
     USER,

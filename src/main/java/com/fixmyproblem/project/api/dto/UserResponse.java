@@ -1,6 +1,6 @@
 package com.fixmyproblem.project.api.dto;
 
-import com.fixmyproblem.project.model.UserModel;
+import com.fixmyproblem.project.model.Role;
 import com.fixmyproblem.project.model.ticket.Ticket;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +18,7 @@ public class UserResponse {
     private String lastName;
     private String username;
     private String email;
-    private UserModel userModel;
+    private Role role;
     private List<Ticket> tickets;
     private OffsetDateTime createdOn;
     private OffsetDateTime updatedOn;

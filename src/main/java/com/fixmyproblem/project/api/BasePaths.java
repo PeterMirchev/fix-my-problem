@@ -1,4 +1,4 @@
-package com.fixmyproblem.project.api.controller;
+package com.fixmyproblem.project.api;
 
 public class BasePaths {
 
